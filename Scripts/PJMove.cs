@@ -17,5 +17,10 @@ public class PJMove : MonoBehaviour
     {
         float mX = Input.GetAxisRaw("Horizontal");
         rb.linearVelocityX = mX * velocidade;
+        if (Input.GetKeyDown(KeyCode.Escape)&& podePular)
+        {
+            podePular =false;
+            rb.AddForce(forçaPulo, ForceMode2D.Impulse);
+        }
     }
 }
